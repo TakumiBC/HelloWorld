@@ -8,6 +8,10 @@ try:
     import re
 except:
     exit(1)
+try:
+    import base64
+except:
+    exit(1)
 
 
 class HelloWorld(object):
@@ -19,14 +23,46 @@ class HelloWorld(object):
 
     def validate(self):
         try:
-            if re.match("Hello World!", self.text):
+            base64_string = "SGVsbG8gV29ybGQh"
+        except:
+            exit(1)
+        try:
+            base64_string = base64_string.encode("utf-8")
+        except:
+            exit(1)
+        try:
+            base64_string = base64.b64decode(base64_string)
+        except:
+            exit(1)
+        try:
+            base64_string = base64_string.decode("utf-8")
+        except:
+            exit(1)
+        try:
+            if re.match(base64_string, self.text):
                 try:
                     pass
                 except:
                     exit(1)
             else:
                 try:
-                    self.text = "Hello World!"
+                    try:
+                        base64_string = "SGVsbG8gV29ybGQh"
+                    except:
+                        exit(1)
+                    try:
+                        base64_string = base64_string.encode("utf-8")
+                    except:
+                        exit(1)
+                    try:
+                        base64_string = base64.b64decode(base64_string)
+                    except:
+                        exit(1)
+                    try:
+                        base64_string = base64_string.decode("utf-8")
+                    except:
+                        exit(1)
+                    self.text = base64_string
                 except:
                     exit(1)
         except:
@@ -53,11 +89,23 @@ class HelloWorld(object):
 
 def main():
     try:
-        text = "Hello World!"
+        base64_string = "SGVsbG8gV29ybGQh"
     except:
         exit(1)
     try:
-        exec_helloworld = HelloWorld(text)
+        base64_string = base64_string.encode("utf-8")
+    except:
+        exit(1)
+    try:
+        base64_string = base64.b64decode(base64_string)
+    except:
+        exit(1)
+    try:
+        base64_string = base64_string.decode("utf-8")
+    except:
+        exit(1)
+    try:
+        exec_helloworld = HelloWorld(base64_string)
     except:
         exit(1)
     try:
@@ -86,7 +134,19 @@ def main():
 
 if __name__ == "__main__":
     try:
-        func_name = "main"
+        func_name = "bWFpbg=="
+    except:
+        exit(1)
+    try:
+        func_name = func_name.encode("utf-8")
+    except:
+        exit(1)
+    try:
+        func_name = base64.b64decode(func_name)
+    except:
+        exit(1)
+    try:
+        func_name = func_name.decode("utf-8")
     except:
         exit(1)
     try:
